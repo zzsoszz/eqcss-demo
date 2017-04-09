@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>eqcss-demo</title>
+	<script src="EQCSS.min.js"></script>
+	<script src="EQCSS-polyfills.min.js"></script>
+	<style>
+	    .plugin-wrapper:before,.plugin-wrapper:after{
+	    	display: table;
+  			content: " ";
+  			clear: both;
+	    }
+	    .plugin-wrapper .plugin{
+	    	float:left;
+	    	background:yellow;
+	    }
+		@element .plugin-wrapper and (max-width:640px) {
+		  $this .plugin{
+			 width:100%;
+			 margin-top:10%;
+		  }
+		}
+		@element .plugin-wrapper and (min-width:640px) {
+		  $this .plugin{
+			 width:50%;
+		  }
+		}
+	</style>
+</head>
+<body>
+	<div class="plugin-wrapper">
+		<div class="plugin">
+			aaaaaaaaaaaa
+		</div>
+		<div class="plugin">
+			bbbbbbbbbbbb
+		</div>
+	</div>
+</body>
+</html>
